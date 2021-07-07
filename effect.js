@@ -57,6 +57,9 @@ function loopOne() {
 	}
 
 function tampil_utama(){
+	
+	var audio = $('.song')[0];
+        audio.play();
 	$('#bulb_yellow').addClass('bulb-glow-yellow');
 		$('#bulb_red').addClass('bulb-glow-red');
 		$('#bulb_blue').addClass('bulb-glow-blue');
@@ -92,8 +95,6 @@ function tampil_utama(){
 };
 
 $('document').ready(function(){
-	var audio = $('.song')[0];
-        audio.play();
 		var vw;
 		$(window).resize(function(){
 			 vw = $(window).width()/2;
@@ -107,7 +108,7 @@ $('document').ready(function(){
 			$('#b77').animate({top:240, left: vw+250},500);
 		});
 		
-		tampil_utama();
+		
 		$('#cake_fadein').fadeIn('slow');
 		
 		
@@ -115,6 +116,7 @@ $('document').ready(function(){
 
 	$('#cake_fadein').click(function(){
 		$('.cake').fadeIn('slow');
+		tampil_utama();
 		$(this).fadeOut('slow').delay(3000).promise().done(function(){
 			$('#light_candle').fadeIn('slow');
 		});
